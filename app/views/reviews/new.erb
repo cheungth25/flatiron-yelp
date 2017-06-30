@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <form action="/reviews" method="POST">
+      <label for="User">User:</label>
+      <input type="text" name="review[user][name]"><br>
+      <label for="Contact info">Contact info:</label>
+      <input type="text" name="review[user][contact_info]"><br>
+      <label for="Food">Food:</label>
+      <input type="text" name="review[food][][name]"><br>
+      <label for="Cost">Cost:</label>
+      <input type="text" name="review[restaurant_foods][][cost]"><br>
+      <label for="Comment">Comment:</label>
+      <input type="text" name="review[rating][][comment]"><br>
+      <label for="Stars">Stars (1-5):</label>
+      <input type="text" name="review[rating][][stars]"><br>
+      <input type="submit" name="submit" value="Submit review"><br>
+    </form>
+  </body>
+</html>
