@@ -20,12 +20,14 @@ ActiveRecord::Schema.define(version: 5) do
 
   create_table "restaurant_foods", force: :cascade do |t|
     t.float "cost"
+    t.integer "review_id"
     t.integer "restaurant_id"
     t.integer "food_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.index ["food_id"], name: "index_restaurant_foods_on_food_id"
     t.index ["restaurant_id"], name: "index_restaurant_foods_on_restaurant_id"
+    t.index ["review_id"], name: "index_restaurant_foods_on_review_id"
   end
 
   create_table "restaurants", force: :cascade do |t|

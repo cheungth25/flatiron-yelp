@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1> Edit Review: </h1><br>
+    <p> Restaurant Name: </p><br>
+    <p> Dish Name: <%= @food.name%></p><br>
+    <p> Dish Cost: <%= @restaurant_food.cost%></p><br>
+    <p> User's Name: <%= @user.name%></p><br>
+    <p> User's Contact Info: <%= @user.contact_info%></p><br>
+    <p> User's Review: <%= @review.comment%></p><br>
+    <p> Star Rating: <%= @review.stars%></p><br>
+
+    <form action=<%="/reviews/#{@review.id}"%> method="POST">
+      <input id="hidden" type="hidden" name="_method" value="patch">
+      <label for="User">User:</label>
+      <input type="text" name="review[user][name]"><br>
+      <label for="Contact info">Contact info:</label>
+      <input type="text" name="review[user][contact_info]"><br>
+      <label for="Food">Food:</label>
+      <input type="text" name="review[food][name]"><br>
+      <label for="Cost">Cost:</label>
+      <input type="text" name="review[restaurant_foods][cost]"><br>
+      <label for="Comment">Comment:</label>
+      <input type="text" name="review[rating][comment]"><br>
+      <label for="Stars">Stars (1-5):</label>
+      <input type="text" name="review[rating][stars]"><br>
+      <input type="submit" name="edit review submit" value="Update Review"><br>
+    </form>
+  </body>
+</html>

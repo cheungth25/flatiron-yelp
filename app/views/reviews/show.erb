@@ -1,3 +1,24 @@
-<%= @review.comment %>
-<%= @review.user_id %>
-<%= @review.user.name %>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>A Nice Dish </h1><br>
+    <p> Restaurant Name: </p><br>
+    <p> Dish Name: <%= @food.name%></p><br>
+    <p> Dish Cost: <%= @restaurant_food.cost%></p><br>
+    <p> User's Name: <%= @user.name%></p><br>
+    <p> User's Contact Info: <%= @user.contact_info%></p><br>
+    <p> User's Review: <%= @review.comment%></p><br>
+    <p> Star Rating: <%= @review.stars%></p><br>
+
+  <a href=<%="/reviews/#{@review.id}/edit"%>>Edit This Review</a><br>
+  <form action=<%="/reviews/#{@review.id}/delete"%> method="post">
+    <input type="hidden" id="hidden" name="_method" value="delete">
+    <input type="submit" value="Delete This Review"><br>
+  </form>
+
+  </body>
+</html>
